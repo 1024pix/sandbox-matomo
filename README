@@ -1,0 +1,31 @@
+## Démarrer Matomo
+
+Depuis le sous-répertoire `/matomo-app` :
+
+```
+cd matomo-app
+docker-compose up -d
+```
+
+Se rendre sur http://localhost:8080 et suivre le guide d'installation.
+
+Depuis l'interface Tag Manager (en haut à droite), déclarer un nouveau conteneur et récupérer son ID d'intégration.
+
+## Configurer et démarrer l'app Ember
+
+Editer la clé `ENV.matomo.url` en configurant le bon ID de conteneur obtenu ci-dessus dans le fichier `config/environment.js`.
+
+Depuis le sous-répertoire `/ember-app` :
+
+```
+npm install
+npm start
+```
+Se rendre sur http://localhost:4200 et manipuler un peu l'interface pour générer de la data.
+
+## Matomo + Ember
+
+Depuis l'interface de Tag Manager, activer le mode preview/debug.
+
+Se rendre sur http://localhost:4200?mtmPreviewMode=j3UiOD2u pour lancer le debugger Matomo depuis l'application Ember.
+
